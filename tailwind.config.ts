@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,6 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Task priority colors
 				priority: {
 					high: '#F97316',
 					medium: '#0EA5E9',
@@ -214,8 +212,8 @@ export default {
 				'float': 'float 3s ease-in-out infinite'
 			},
 			fontFamily: {
-				sans: ['Inter var', 'sans-serif'],
-				display: ['SF Pro Display', 'Inter var', 'sans-serif']
+				sans: ['Poppins', 'sans-serif'],
+				display: ['Montserrat', 'sans-serif']
 			},
 			boxShadow: {
 				task: '0 2px 15px rgba(0, 0, 0, 0.15), 0 10px 30px rgba(0, 0, 0, 0.1)',
