@@ -43,10 +43,27 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    background: url('https://i.gifer.com/iCg.gif') center center fixed;
-    background-size: cover; /* Ensures image covers whole screen */
-    background-repeat: no-repeat;
+    export function App() {
+      return (
+        <div className="relative min-h-screen">
+          {/* Video Background */}
+          <video
+            autoPlay
+            muted
+            loop
+            className="fixed top-0 left-0 w-full h-full object-cover z-0"
+          >
+            <source src="/background-video.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+    
+          {/* Content */}
+          <div className="relative z-10">
+            {/* Your app content here */}
+          </div>
+        </div>
+      );
+    }
   }
 
   #root {
