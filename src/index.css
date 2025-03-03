@@ -76,11 +76,11 @@
 
 @layer components {
   .task-card {
-    @apply relative flex items-center gap-3 p-4 sm:p-5 bg-card/80 border border-white/10 rounded-xl shadow-task backdrop-blur-md transition-all duration-300 overflow-hidden;
+    @apply relative flex items-center gap-3 p-4 sm:p-5 bg-card/40 border border-white/20 rounded-xl shadow-task backdrop-blur-lg transition-all duration-300 overflow-hidden;
   }
 
   .task-card:hover {
-    @apply bg-card/95 shadow-task-hover transform translate-y-[-2px];
+    @apply bg-card/60 shadow-task-hover transform translate-y-[-2px] border-white/30;
   }
 
   .task-card::before {
@@ -105,27 +105,27 @@
   }
 
   .priority-chip {
-    @apply text-xs font-medium py-1 px-2.5 rounded-full;
+    @apply text-xs font-medium py-1 px-2.5 rounded-full bg-opacity-60;
   }
 
   .priority-chip.priority-high {
-    @apply bg-orange-950/40 text-orange-300;
+    @apply bg-orange-950/40 text-orange-300 border border-orange-500/20;
   }
 
   .priority-chip.priority-medium {
-    @apply bg-blue-950/40 text-blue-300;
+    @apply bg-blue-950/40 text-blue-300 border border-blue-500/20;
   }
 
   .priority-chip.priority-low {
-    @apply bg-purple-950/40 text-purple-300;
+    @apply bg-purple-950/40 text-purple-300 border border-purple-500/20;
   }
 
   .glass-container {
-    @apply bg-card/30 backdrop-blur-md border border-white/10 rounded-2xl shadow-glass;
+    @apply bg-card/30 backdrop-blur-md border border-white/20 rounded-2xl shadow-glass hover:border-white/30 transition-all duration-300;
   }
 
   .glass-input {
-    @apply bg-card/20 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/30 placeholder:text-white/70 transition duration-200 text-white;
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 placeholder:text-white/70 transition duration-200 text-white;
   }
 
   .filter-tab {

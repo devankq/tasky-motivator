@@ -35,7 +35,7 @@ const MotivationalMessage: React.FC<MotivationalMessageProps> = ({ tasks }) => {
         isAnimating ? 'opacity-0' : 'opacity-100'
       }`}
     >
-      <p className="text-white/90 text-lg font-light animate-fade-in max-w-lg">
+      <p className="text-white/90 text-lg font-light animate-fade-in max-w-lg glass-container px-6 py-3">
         {message}
       </p>
     </div>

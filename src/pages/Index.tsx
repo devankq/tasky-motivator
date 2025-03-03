@@ -128,7 +128,7 @@ const Index = () => {
               Elegant Tasks
             </span>
           </h1>
-          <p className="text-purple-300/80">
+          <p className="text-purple-300/80 glass-container inline-block px-4 py-1 mb-4">
             Achieve more with less
           </p>
         </div>
@@ -155,13 +155,13 @@ const Index = () => {
                       : 'priority';
                 handleSortChange(nextSort);
               }}
-              className="flex items-center space-x-1 text-sm text-purple-300 hover:text-white py-1 px-2 rounded-md hover:bg-purple-900/30 transition-colors"
+              className="flex items-center space-x-1 text-sm text-purple-300 hover:text-white py-1 px-2 rounded-md hover:bg-purple-900/30 transition-colors glass-container"
             >
               <ArrowUpDown size={16} />
               <span>Sort</span>
             </button>
             
-            <div className="absolute right-0 mt-1 w-48 bg-card rounded-lg shadow-lg border border-white/10 overflow-hidden invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 z-10">
+            <div className="absolute right-0 mt-1 w-48 glass-container rounded-lg shadow-glass border border-white/20 overflow-hidden invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 z-10">
               <div className="py-1">
                 {['priority', 'dueDate', 'alphabetical', 'created'].map((option) => (
                   <button
@@ -184,7 +184,7 @@ const Index = () => {
           </div>
         </div>
         
-        <div className="glass-container p-4 sm:p-6">
+        <div className="glass-container p-4 sm:p-6 backdrop-blur-lg">
           <TaskList 
             tasks={sortedAndFilteredTasks} 
             onToggleComplete={handleToggleComplete}

@@ -23,8 +23,8 @@ const FilterTabs: React.FC<FilterTabsProps> = ({
           className={cn(
             "filter-tab rounded-lg transition-all duration-200",
             filter === 'all' ? 
-              "bg-white shadow-sm" : 
-              "hover:bg-white/50"
+              "bg-white/10 backdrop-blur-sm shadow-sm" : 
+              "hover:bg-white/10"
           )}
         >
           All ({activeCount + completedCount})
@@ -34,8 +34,8 @@ const FilterTabs: React.FC<FilterTabsProps> = ({
           className={cn(
             "filter-tab rounded-lg transition-all duration-200",
             filter === 'active' ? 
-              "bg-white shadow-sm" : 
-              "hover:bg-white/50"
+              "bg-white/10 backdrop-blur-sm shadow-sm" : 
+              "hover:bg-white/10"
           )}
         >
           Active ({activeCount})
@@ -45,8 +45,8 @@ const FilterTabs: React.FC<FilterTabsProps> = ({
           className={cn(
             "filter-tab rounded-lg transition-all duration-200",
             filter === 'completed' ? 
-              "bg-white shadow-sm" : 
-              "hover:bg-white/50"
+              "bg-white/10 backdrop-blur-sm shadow-sm" : 
+              "hover:bg-white/10"
           )}
         >
           Completed ({completedCount})

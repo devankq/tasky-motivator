@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Task, TaskPriority } from '../types/task';
 import { findAutocompleteSuggestions } from '../utils/taskUtils';
@@ -116,14 +115,14 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
           {suggestions.length > 0 && isFocused && (
             <div 
               ref={suggestionsRef}
-              className="absolute left-0 right-0 mt-1 bg-white rounded-lg border border-gray-200 shadow-lg z-10 overflow-hidden animate-slide-up"
+              className="absolute left-0 right-0 mt-1 bg-white/20 backdrop-blur-md rounded-lg border border-white/10 shadow-lg z-10 overflow-hidden animate-slide-up"
             >
               {suggestions.map((suggestion, index) => (
                 <div
                   key={index}
                   className={cn(
-                    "px-4 py-2 cursor-pointer hover:bg-gray-50 transition-colors",
-                    index === activeSuggestion ? "bg-gray-100" : ""
+                    "px-4 py-2 cursor-pointer hover:bg-white/30 transition-colors text-white",
+                    index === activeSuggestion ? "bg-white/20" : ""
                   )}
                   onMouseDown={() => applySuggestion(suggestion)}
                 >
@@ -149,7 +148,7 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
                 ? "border-priority-low bg-priority-low scale-110" 
                 : "border-gray-300"
             )}></span>
-            <span className="text-sm font-medium text-gray-700">Low</span>
+            <span className="text-sm font-medium text-white">Low</span>
           </label>
           
           <label className="flex items-center cursor-pointer">
@@ -166,7 +165,7 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
                 ? "border-priority-medium bg-priority-medium scale-110" 
                 : "border-gray-300"
             )}></span>
-            <span className="text-sm font-medium text-gray-700">Medium</span>
+            <span className="text-sm font-medium text-white">Medium</span>
           </label>
           
           <label className="flex items-center cursor-pointer">
@@ -183,7 +182,7 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
                 ? "border-priority-high bg-priority-high scale-110" 
                 : "border-gray-300"
             )}></span>
-            <span className="text-sm font-medium text-gray-700">High</span>
+            <span className="text-sm font-medium text-white">Medium</span>
           </label>
         </div>
       </form>

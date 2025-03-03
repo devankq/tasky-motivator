@@ -33,7 +33,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggleComplete, onDelete })
   return (
     <div 
       className={cn(
-        "task-card mb-3 group",
+        "task-card mb-3 group backdrop-blur-md",
         `priority-${task.priority}`,
         task.completed ? "completed" : "",
         isDeleting ? "opacity-0 scale-95" : "opacity-100 scale-100",
@@ -68,7 +68,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggleComplete, onDelete })
             <div className="flex items-center mt-1 space-x-2">
               <span 
                 className={cn(
-                  "priority-chip",
+                  "priority-chip backdrop-blur-sm",
                   `priority-${task.priority}`
                 )}
               >
