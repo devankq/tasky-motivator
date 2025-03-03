@@ -58,8 +58,8 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggleComplete, onDelete })
           <div>
             <h3 
               className={cn(
-                "text-gray-900 font-medium break-words",
-                task.completed ? "line-through text-gray-500" : ""
+                "text-white font-medium break-words",
+                task.completed ? "line-through text-white/60" : ""
               )}
             >
               {task.title}
@@ -80,10 +80,10 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggleComplete, onDelete })
                   className={cn(
                     "text-xs flex items-center",
                     task.completed 
-                      ? "text-gray-500" 
+                      ? "text-white/60" 
                       : isOverdue 
-                        ? "text-red-600 font-medium" 
-                        : "text-gray-500"
+                        ? "text-red-400 font-medium" 
+                        : "text-white/80"
                   )}
                 >
                   <Clock size={12} className="mr-1" />
@@ -98,7 +98,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggleComplete, onDelete })
       
       <button
         onClick={handleDelete}
-        className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors"
+        className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white/70 hover:text-red-400 hover:bg-red-900/30 transition-colors"
         aria-label="Delete task"
       >
         <Trash2 size={16} />

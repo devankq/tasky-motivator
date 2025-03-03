@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -124,11 +125,11 @@
   }
 
   .glass-input {
-    @apply bg-card/20 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/30 placeholder:text-gray-400 transition duration-200;
+    @apply bg-card/20 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent/30 placeholder:text-white/70 transition duration-200 text-white;
   }
 
   .filter-tab {
-    @apply relative px-4 py-2 text-sm font-medium text-gray-400 transition duration-200 hover:text-white;
+    @apply relative px-4 py-2 text-sm font-medium text-white/70 transition duration-200 hover:text-white;
   }
 
   .filter-tab.active {
