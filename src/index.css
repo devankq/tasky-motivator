@@ -44,7 +44,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background: url('/path-to-your-image.jpg') center center fixed;
+    background: url('https://i.postimg.cc/Zn9rZc1p/RB-Gradient-Background-204.jpg') center center fixed;
     background-size: cover; /* Ensures image covers whole screen */
     background-repeat: no-repeat;
   }
