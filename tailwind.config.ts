@@ -71,11 +71,24 @@ export default {
 					completed: '#10B981'
 				},
 				todo: {
-					card: 'rgba(255, 255, 255, 0.8)',
-					cardHover: 'rgba(255, 255, 255, 0.95)',
-					cardBorder: 'rgba(255, 255, 255, 0.15)',
-					chip: 'rgba(255, 255, 255, 0.25)',
-					chipText: 'rgba(0, 0, 0, 0.7)'
+					card: 'rgba(30, 18, 50, 0.6)',
+					cardHover: 'rgba(38, 25, 63, 0.8)',
+					cardBorder: 'rgba(255, 255, 255, 0.1)',
+					chip: 'rgba(255, 255, 255, 0.1)',
+					chipText: 'rgba(255, 255, 255, 0.8)'
+				},
+				purple: {
+					50: '#f5f3ff',
+					100: '#ede9fe',
+					200: '#ddd6fe',
+					300: '#c4b5fd',
+					400: '#a78bfa',
+					500: '#8b5cf6',
+					600: '#7c3aed',
+					700: '#6d28d9',
+					800: '#5b21b6',
+					900: '#4c1d95',
+					950: '#2e1065',
 				}
 			},
 			borderRadius: {
@@ -205,14 +218,15 @@ export default {
 				display: ['SF Pro Display', 'Inter var', 'sans-serif']
 			},
 			boxShadow: {
-				task: '0 2px 10px rgba(0, 0, 0, 0.04), 0 10px 20px rgba(0, 0, 0, 0.02)',
-				'task-hover': '0 4px 20px rgba(0, 0, 0, 0.08), 0 15px 30px rgba(0, 0, 0, 0.04)',
-				'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
-				'glass-hover': '0 8px 32px rgba(0, 0, 0, 0.15)'
+				task: '0 2px 15px rgba(0, 0, 0, 0.15), 0 10px 30px rgba(0, 0, 0, 0.1)',
+				'task-hover': '0 4px 20px rgba(109, 40, 217, 0.15), 0 15px 35px rgba(0, 0, 0, 0.1)',
+				'glass': '0 4px 30px rgba(0, 0, 0, 0.2)',
+				'glass-hover': '0 8px 32px rgba(124, 58, 237, 0.2)'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-subtle': 'linear-gradient(to right, #f8f9fa, #ffffff, #f8f9fa)'
+				'gradient-subtle': 'linear-gradient(to right, #1e1238, #2d1b47, #1e1238)',
+				'glow-conic': 'conic-gradient(from 180deg at 50% 50%, #7c3aed 0deg, #9d76ef 180deg, #d6bcfa 360deg)',
 			},
 			backdropBlur: {
 				'xs': '2px'

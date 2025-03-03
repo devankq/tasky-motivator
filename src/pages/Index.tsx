@@ -14,7 +14,7 @@ import {
   filterTasks,
   isTaskOverdue
 } from '../utils/taskUtils';
-import { ArrowUpDown, Bell } from 'lucide-react';
+import { ArrowUpDown, Bell, Sparkles } from 'lucide-react';
 
 const Index = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -47,7 +47,7 @@ const Index = () => {
         
         toast(taskText, {
           description: "These tasks have passed their due date.",
-          icon: <Bell className="text-red-500" />,
+          icon: <Bell className="text-red-400" />,
           duration: 5000,
         });
       }
@@ -122,10 +122,13 @@ const Index = () => {
     <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            Elegant Tasks
+          <h1 className="text-4xl font-bold text-white mb-2 flex items-center justify-center gap-2">
+            <Sparkles className="h-8 w-8 text-purple-400" />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-200 via-purple-300 to-purple-100">
+              Elegant Tasks
+            </span>
           </h1>
-          <p className="text-gray-600">
+          <p className="text-purple-300/80">
             Achieve more with less
           </p>
         </div>
@@ -152,13 +155,13 @@ const Index = () => {
                       : 'priority';
                 handleSortChange(nextSort);
               }}
-              className="flex items-center space-x-1 text-sm text-gray-600 hover:text-gray-900 py-1 px-2 rounded-md hover:bg-gray-100 transition-colors"
+              className="flex items-center space-x-1 text-sm text-purple-300 hover:text-white py-1 px-2 rounded-md hover:bg-purple-900/30 transition-colors"
             >
               <ArrowUpDown size={16} />
               <span>Sort</span>
             </button>
             
-            <div className="absolute right-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 z-10">
+            <div className="absolute right-0 mt-1 w-48 bg-card rounded-lg shadow-lg border border-white/10 overflow-hidden invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 z-10">
               <div className="py-1">
                 {['priority', 'dueDate', 'alphabetical', 'created'].map((option) => (
                   <button
@@ -166,8 +169,8 @@ const Index = () => {
                     onClick={() => handleSortChange(option)}
                     className={`block w-full text-left px-4 py-2 text-sm ${
                       sortBy === option 
-                        ? 'bg-gray-100 text-gray-900 font-medium' 
-                        : 'text-gray-700 hover:bg-gray-50'
+                        ? 'bg-purple-800/30 text-white font-medium' 
+                        : 'text-purple-200 hover:bg-purple-800/20'
                     }`}
                   >
                     {option === 'priority' && 'By Priority'}

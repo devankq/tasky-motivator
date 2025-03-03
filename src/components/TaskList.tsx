@@ -14,7 +14,7 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onToggleComplete, onDelete }
   if (tasks.length === 0) {
     return (
       <div className="py-10 text-center">
-        <p className="text-gray-500 italic">No tasks found</p>
+        <p className="text-gray-400 italic">No tasks found</p>
       </div>
     );
   }
