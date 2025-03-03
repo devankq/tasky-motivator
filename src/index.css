@@ -44,7 +44,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background: url('https://i.postimg.cc/gcg80sBq/2025-02-06-background-10.jpg') center center fixed;
+    background: url('https://i.postimg.cc/DZkD3J9m/Abstract-Wavy-Lines.jpg') center center fixed;
     background-size: cover; /* Ensures image covers whole screen */
     background-repeat: no-repeat;
   }
