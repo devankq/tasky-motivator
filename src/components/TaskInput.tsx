@@ -19,7 +19,6 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
 
-  // Update suggestions when title changes
   useEffect(() => {
     if (title.trim()) {
       const newSuggestions = findAutocompleteSuggestions(title, existingTasks);
@@ -30,7 +29,6 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
     setActiveSuggestion(-1);
   }, [title, existingTasks]);
 
-  // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -40,35 +38,29 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
       setPriority('medium');
       setSuggestions([]);
       
-      // Focus the input after submission for quick repeated entry
       inputRef.current?.focus();
     }
   };
 
-  // Handle keyboard navigation for suggestions
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (suggestions.length === 0) return;
     
-    // Arrow down
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       setActiveSuggestion(prev => 
         prev < suggestions.length - 1 ? prev + 1 : prev
       );
     }
-    // Arrow up
     else if (e.key === 'ArrowUp') {
       e.preventDefault();
       setActiveSuggestion(prev => prev > 0 ? prev - 1 : 0);
     }
-    // Enter key while suggestion is active
     else if (e.key === 'Enter' && activeSuggestion >= 0) {
       e.preventDefault();
       setTitle(suggestions[activeSuggestion]);
       setSuggestions([]);
       setActiveSuggestion(-1);
     }
-    // Escape key
     else if (e.key === 'Escape') {
       setSuggestions([]);
       setActiveSuggestion(-1);
@@ -76,7 +68,6 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
     }
   };
 
-  // Apply a suggestion
   const applySuggestion = (suggestion: string) => {
     setTitle(suggestion);
     setSuggestions([]);
@@ -96,7 +87,6 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
             onKeyDown={handleKeyDown}
             onFocus={() => setIsFocused(true)}
             onBlur={() => {
-              // Delay hiding suggestions to allow clicking on them
               setTimeout(() => setIsFocused(false), 150);
             }}
             placeholder="What needs to be done?"
@@ -111,7 +101,6 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
             <Plus size={20} strokeWidth={2.5} />
           </button>
           
-          {/* Autocomplete suggestions */}
           {suggestions.length > 0 && isFocused && (
             <div 
               ref={suggestionsRef}
@@ -133,8 +122,8 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
           )}
         </div>
         
-        <div className="flex justify-center space-x-3">
-          <label className="flex items-center cursor-pointer">
+        <div className="flex justify-center space-x-4">
+          <label className="flex items-center cursor-pointer group">
             <input
               type="radio"
               className="sr-only"
@@ -143,15 +132,15 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
               onChange={() => setPriority('low')}
             />
             <span className={cn(
-              "inline-block w-4 h-4 rounded-full border-2 mr-2 transition-all duration-200",
+              "inline-block w-5 h-5 rounded-full border-2 mr-2 transition-all duration-200",
               priority === 'low' 
-                ? "border-priority-low bg-priority-low scale-110" 
-                : "border-gray-300"
+                ? "border-priority-low bg-priority-low scale-110 shadow-[0_0_8px_rgba(139,92,246,0.5)]" 
+                : "border-white/30 group-hover:border-white/50"
             )}></span>
-            <span className="text-sm font-medium text-white">Low</span>
+            <span className="text-sm font-medium text-white/80 group-hover:text-white">Low</span>
           </label>
           
-          <label className="flex items-center cursor-pointer">
+          <label className="flex items-center cursor-pointer group">
             <input
               type="radio"
               className="sr-only"
@@ -160,15 +149,15 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
               onChange={() => setPriority('medium')}
             />
             <span className={cn(
-              "inline-block w-4 h-4 rounded-full border-2 mr-2 transition-all duration-200",
+              "inline-block w-5 h-5 rounded-full border-2 mr-2 transition-all duration-200",
               priority === 'medium' 
-                ? "border-priority-medium bg-priority-medium scale-110" 
-                : "border-gray-300"
+                ? "border-priority-medium bg-priority-medium scale-110 shadow-[0_0_8px_rgba(14,165,233,0.5)]" 
+                : "border-white/30 group-hover:border-white/50"
             )}></span>
-            <span className="text-sm font-medium text-white">Medium</span>
+            <span className="text-sm font-medium text-white/80 group-hover:text-white">Medium</span>
           </label>
           
-          <label className="flex items-center cursor-pointer">
+          <label className="flex items-center cursor-pointer group">
             <input
               type="radio"
               className="sr-only"
@@ -177,12 +166,12 @@ const TaskInput: React.FC<TaskInputProps> = ({ onAddTask, existingTasks }) => {
               onChange={() => setPriority('high')}
             />
             <span className={cn(
-              "inline-block w-4 h-4 rounded-full border-2 mr-2 transition-all duration-200",
+              "inline-block w-5 h-5 rounded-full border-2 mr-2 transition-all duration-200",
               priority === 'high' 
-                ? "border-priority-high bg-priority-high scale-110" 
-                : "border-gray-300"
+                ? "border-priority-high bg-priority-high scale-110 shadow-[0_0_8px_rgba(249,115,22,0.5)]" 
+                : "border-white/30 group-hover:border-white/50"
             )}></span>
-            <span className="text-sm font-medium text-white">Medium</span>
+            <span className="text-sm font-medium text-white/80 group-hover:text-white">High</span>
           </label>
         </div>
       </form>
